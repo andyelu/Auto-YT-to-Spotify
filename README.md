@@ -22,3 +22,9 @@ It will return:
 **Please visit this URL to authorize this application:**
 
 Visit that URL and login to your YouTube account. Copy the item it provides you and paste it back into your terminal.
+
+If you are getting an error, trying running this (depending on when you installed it, the youtube DL library may be the cause):
+
+**pip install --upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"**
+
+
