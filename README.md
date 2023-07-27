@@ -1,30 +1,44 @@
-# Auto-YT-to-Spotify
-Automates the process of transferring the contents of a YouTube music playlist to your Spotify liked songs
+#Auto-YT-to-Spotify
+Auto-YT-to-Spotify is a powerful tool that automates the process of transferring the contents of a YouTube music playlist to your Spotify liked songs. With a few simple steps, you can seamlessly enjoy your favorite music across platforms. Follow the instructions below to get started:
 
-Grab your Spotify access token by first creating an app on Spotify Developer. Make a new app project (the redirect URI should be your live server url; here you can view your client id and secret client id.
-Then open the index.html with Live Server. Paste the client id and secret client id in. Allow authorization to use your spotify account. After the redirect, press F12 (inspect element) and view your access token under the Application tab.
+Prerequisites
+Spotify Access Token
+To use the tool, you need to grab your Spotify access token. Here's how:
 
-Then install the youtube credentials json file following these instructions: https://www.youtube.com/shorts/BBgrgA96n-Q?feature=share.
-While you are doing this, add yourself as a Test User. Otherwise you need to get the app verified to be able to use it. 
+Create an app on Spotify Developer Dashboard.
+Make a new app project and note down the client ID and secret client ID.
+Set the redirect URI as your live server URL.
+Open the index.html file using Live Server and paste the client ID and secret client ID.
+Allow authorization to use your Spotify account.
+After the redirect, press F12 (inspect element) and view your access token under the Application tab.
+YouTube Credentials JSON File
+Follow the instructions in this video (https://www.youtube.com/shorts/BBgrgA96n-Q?feature=share) to obtain the YouTube credentials JSON file. Ensure you add yourself as a Test User during this process. Otherwise, you will need to get the app verified to use it.
 
-Place the file in the a 'creds' directory.
+Set up 'creds' Directory
+Place the YouTube credentials JSON file in a directory named 'creds'.
 
-To run, open up the local terminal. Type in: 
+Installation and Setup
+Install YouTube DL Library
+If you encounter any issues during installation, run the following command to ensure the latest version of the YouTube DL library is installed:
 
-**set SPOTIFY_AUTH_TOKEN=<YOUR_ACCESS_TOKEN>**
+bash
+Copy code
+pip install --upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"
+Run the Application
+Open up your local terminal and follow the instructions below based on your system:
 
-For Unix-like systems, including macOS and Linux
+For Windows:
+bash
+Copy code
+set SPOTIFY_AUTH_TOKEN=<YOUR_ACCESS_TOKEN>
+For Unix-like systems (macOS, Linux):
+bash
+Copy code
+export SPOTIFY_AUTH_TOKEN=<YOUR_ACCESS_TOKEN>
+It will display a URL; visit that URL and log in to your YouTube account. Copy the provided item and paste it back into your terminal.
 
-**export SPOTIFY_AUTH_TOKEN=<YOUR_ACCESS_TOKEN>**
+Usage
+Once the setup is complete, you are all set to use Auto-YT-to-Spotify. Simply run the application, and it will automatically transfer the contents of your YouTube music playlist to your Spotify liked songs.
 
-It will return:
-
-**Please visit this URL to authorize this application:**
-
-Visit that URL and login to your YouTube account. Copy the item it provides you and paste it back into your terminal.
-
-If you are getting an error, trying running this (depending on when you installed it, the youtube DL library may be the cause):
-
-**pip install --upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"**
-
-
+Contributing
+We welcome contributions from the community! If you would like to contribute to the project, please follow the guidelines for pull requests, code formatting, and issue reporting mentioned in the CONTRIBUTING.md file.
